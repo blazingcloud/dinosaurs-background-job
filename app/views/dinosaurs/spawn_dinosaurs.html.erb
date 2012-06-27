@@ -1,0 +1,7 @@
+<%= @new_num_dinos %> new Dinosaurs created. They are:
+
+<ul>
+<% @dino_list.each do |dino| %>
+  <li><%= dino.name %></li>
+<% end %>
+</ul>

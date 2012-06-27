@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @dinosaur.name %>
+</p>
+
+<p>
+  <b>Favorite food:</b>
+  <%= @dinosaur.favorite_food %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%= @dinosaur.weight %>
+</p>
+
+<p>
+  <b>Color:</b>
+  <%= @dinosaur.color %>
+</p>
+
+<p>
+  <b>Species:</b>
+  <%= @dinosaur.species.common_name %>
+</p>
+
+
+<%= link_to 'Edit', edit_dinosaur_path(@dinosaur) %> |
+<%= link_to 'Back', dinosaurs_path %>

@@ -1,0 +1,29 @@
+<%= form_for(@species) do |f| %>
+  <% if @species.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@species.errors.count, "error") %> prohibited this species from being saved:</h2>
+
+      <ul>
+      <% @species.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :scientific_name %><br />
+    <%= f.text_field :scientific_name %>
+  </div>
+  <div class="field">
+    <%= f.label :common_name %><br />
+    <%= f.text_field :common_name %>
+  </div>
+  <div class="field">
+    <%= f.label :era %><br />
+    <%= f.text_field :era %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Species.create([{scientific_name: 'Tyrannosaurus Rex', common_name: 'T-Rex', era: 'Cretaceous'},
+                {scientific_name: 'Quetzalcoatlus', common_name: 'Quetzalcoatlus', era: 'Late Cretaceous'},
+                {scientific_name: 'Pachycephalosaurus', common_name: 'Pachycephalosaurus', era: 'Late Cretaceous'}])

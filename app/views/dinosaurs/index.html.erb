@@ -1,0 +1,35 @@
+<%= link_to 'Spawn many Dinosaurs', spawn_dinosaurs_path %>
+
+<h1>Listing dinosaurs</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Favorite food</th>
+    <th>Weight</th>
+    <th>Color</th>
+    <th>Species</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @dinosaurs.each do |dinosaur| %>
+  <tr>
+    <td><%= dinosaur.name %></td>
+    <td><%= dinosaur.favorite_food %></td>
+    <td><%= dinosaur.weight %></td>
+    <td><%= dinosaur.color %></td>
+    <td><%= dinosaur.species.common_name %></td>
+    <td><%= link_to 'Show', dinosaur %></td>
+    <td><%= link_to 'Edit', edit_dinosaur_path(dinosaur) %></td>
+    <td><%= link_to 'Destroy', dinosaur, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Dinosaur', new_dinosaur_path %>
+
+<%= link_to 'Spawn many Dinosaurs', spawn_dinosaurs_path %>
