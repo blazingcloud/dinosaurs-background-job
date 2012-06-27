@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  favorite_food: MyString
+  weight: 1
+  color: MyString
+  species_id: 1
+
+two:
+  name: MyString
+  favorite_food: MyString
+  weight: 1
+  color: MyString
+  species_id: 1

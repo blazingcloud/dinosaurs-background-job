@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  scientific_name: MyString
+  common_name: MyString
+  era: MyString
+
+two:
+  scientific_name: MyString
+  common_name: MyString
+  era: MyString
