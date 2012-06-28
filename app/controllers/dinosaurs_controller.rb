@@ -1,5 +1,4 @@
 class DinosaursController < ApplicationController
-  include RunInBackground
 
   # GET /dinosaurs
   # GET /dinosaurs.json
@@ -85,10 +84,11 @@ class DinosaursController < ApplicationController
 
   # GET /spawn_dinosaurs
   def spawn_dinosaurs
-    Dinosaur.delay.spawn_dinos
+    job = Dinosaur.delay.spawn_dinos
     flash[:notice] = "Spawning dinosaurs..."
+    flash[:alert] = "Job ID is: #{job.id.to_s}"
+    @job_id = job.id
     # redirect_to spawning_done_path
-    render :spawning_done
   end
 
   # GET /spawning_done
