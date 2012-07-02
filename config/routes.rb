@@ -3,8 +3,8 @@ BackgroundSpike::Application.routes.draw do
 
   resources :dinosaurs
 
-  match 'spawn_dinosaurs' => 'dinosaurs#spawn_dinosaurs', :as => :spawn_dinosaurs
-  match 'spawning_done' => 'dinosaurs#spawning_done', :as => :spawning_done
+  match 'spawn_preview' => 'dinosaurs#spawn_preview', :via => :get
+  match 'spawning_results' => 'dinosaurs#spawning_results'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

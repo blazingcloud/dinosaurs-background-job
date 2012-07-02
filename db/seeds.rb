@@ -8,4 +8,5 @@
 
 Species.create([{scientific_name: 'Tyrannosaurus Rex', common_name: 'T-Rex', era: 'Cretaceous'},
                 {scientific_name: 'Quetzalcoatlus', common_name: 'Quetzalcoatlus', era: 'Late Cretaceous'},
-                {scientific_name: 'Pachycephalosaurus', common_name: 'Pachycephalosaurus', era: 'Late Cretaceous'}])
+                {scientific_name: 'Pachycephalosaurus', common_name: 'Pachycephalosaurus', era: 'Late Cretaceous'},
+                {scientific_name: 'Deinonychus', common_name: 'Deinonychus', era: 'Early Cretaceous'}])
