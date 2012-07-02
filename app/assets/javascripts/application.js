@@ -8,13 +8,13 @@
 //= require jquery_ujs
 //= require_tree .
 $(function () {
-    if ($('#spawn').length > 0) {
+    if ($('#spawn')) {
         setTimeout(check_job, 10000);
     }
 });
 
 function check_job() {
     var job_id = $('#spawn').attr('data-id');
-    $.getScript('/spawn_dinosaurs.js?job_id=' + job_id);
+    $.getScript('/dinosaurs/polling.js?job_id=' + job_id);
     setTimeout(check_job, 10000);
 }

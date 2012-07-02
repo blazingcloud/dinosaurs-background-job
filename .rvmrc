@@ -1,1 +1,1 @@
-rvm use ruby-1.9.2-p290@mightyverse_rails3 --create
+rvm use ruby-1.9.2-p290@dinos --create
