@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120702221516) do
+ActiveRecord::Schema.define(:version => 20120703213306) do
+
+  create_table "batches", :force => true do |t|
+    t.string   "status"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -38,6 +44,7 @@ ActiveRecord::Schema.define(:version => 20120702221516) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "job_start_time"
+    t.integer  "batch_id"
   end
 
   create_table "species", :force => true do |t|

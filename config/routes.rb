@@ -5,7 +5,7 @@ BackgroundSpike::Application.routes.draw do
 
   match 'spawn_preview' => 'dinosaurs#spawn_preview', :via => :get
   match 'spawning_results' => 'dinosaurs#spawning_results'
-
+  match 'query_batch/:id' => 'batches#query_batch'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

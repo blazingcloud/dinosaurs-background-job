@@ -89,7 +89,9 @@ class DinosaursController < ApplicationController
   def spawning_results
     puts "-----------------------spawning results-------------------------"
 #    Delayed::Job.enqueue DinosaurJob.new()
-    job = Dinosaur.delay.spawn_dinos(params[:dino])
+    batch = Batch.create!(:status => "processing")
+    @batch_id = batch.id
+    job = Dinosaur.delay.spawn_dinos(params[:dino], @batch_id)
     puts job.id
     puts params[:dino]
     flash[:notice] = "Spawning dinosaurs..."
