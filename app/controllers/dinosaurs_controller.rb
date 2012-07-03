@@ -87,9 +87,13 @@ class DinosaursController < ApplicationController
   end
   # GET /spawn_dinosaurs
   def spawning_results
-    Delayed::Job.enqueue DinosaurJob.new(params[:dinos])
+    puts "-----------------------spawning results-------------------------"
+#    Delayed::Job.enqueue DinosaurJob.new()
+    job = Dinosaur.delay.spawn_dinos(params[:dino])
+    puts job.id
+    puts params[:dino]
     flash[:notice] = "Spawning dinosaurs..."
-    flash[:alert] = "Job ID is: #{job.id.to_s}"
+
   end
 
   # GET /spawning_done
