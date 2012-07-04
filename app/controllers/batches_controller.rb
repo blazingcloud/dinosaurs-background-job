@@ -1,14 +1,14 @@
 class BatchesController < ApplicationController
+  respond_to :html, :json, :js
+
   def query_batch
       @batch = Batch.find(params[:id])
+      respond_with @batch
+  end
 
-      respond_to do |format|
-        format.html
-        format.json{
-          puts "format json------------------------------"
- #         render :json => @batch.to_json
-          render :json => "alert('hello')"
-        }
-      end
+  def show
+    @batch = Batch.find(params[:id])
+    @dinosaurs = @batch.dinosaurs
+    respond_with @dinosaurs
   end
 end

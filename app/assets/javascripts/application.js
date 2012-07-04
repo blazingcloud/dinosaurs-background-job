@@ -9,12 +9,32 @@
 //= require_tree .
 $(function () {
     if ($('#spawn').length > 0) {
-        setTimeout(check_job, 10000);
+        check_job();
     }
 });
 
 function check_job() {
     var batch_id = $('#spawn').attr('data-id');
-    $.getJson('query_batch/' + batch_id, function(response){$('#spawn').innerHTML=response.to_string;});
-    setTimeout(check_job, 10000);
+    $.getJSON('query_batch/' + batch_id, callback);
+}
+
+function callback(response) {
+    var status = response.status;
+    $('#spawn').append('<div>Job status: ' + status + '</div>');
+    switch(status) {
+        case 'processing':
+            setTimeout(check_job, 5000);
+            break;
+        case 'success':
+            show_batch();
+            break;
+        default:
+            $('#spawn').append('<div>invalid response</div>');
+    }
+}
+
+function show_batch() {
+    var batch_id = $('#spawn').attr('data-id');
+    $('#spawn').append('<div>hey i am done</div>');
+    $.getScript('batches/' + batch_id + '.js');
 }

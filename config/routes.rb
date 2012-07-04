@@ -3,6 +3,8 @@ BackgroundSpike::Application.routes.draw do
 
   resources :dinosaurs
 
+  resources :batches
+
   match 'spawn_preview' => 'dinosaurs#spawn_preview', :via => :get
   match 'spawning_results' => 'dinosaurs#spawning_results'
   match 'query_batch/:id' => 'batches#query_batch'
