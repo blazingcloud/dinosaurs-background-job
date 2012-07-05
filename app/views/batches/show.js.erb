@@ -1,2 +1,2 @@
-$('#spawn').append('<div>hey i am in batches/show.js.erb now</div>');
+$('#dino_results').append('<div><%= escape_javascript(raw @dinosaurs.length) %> dinosaurs spawned!</div>');
 $('#dino_results').append("<%= escape_javascript(raw render(@dinosaurs))%>");

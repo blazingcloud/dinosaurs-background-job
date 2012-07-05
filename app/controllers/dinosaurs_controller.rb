@@ -85,23 +85,12 @@ class DinosaursController < ApplicationController
   def spawn_preview
 
   end
-  # GET /spawn_dinosaurs
+
+  # POST /spawning_results
   def spawning_results
-    puts "-----------------------spawning results-------------------------"
-#    Delayed::Job.enqueue DinosaurJob.new()
     batch = Batch.create!(:status => "processing")
     @batch_id = batch.id
-    job = Dinosaur.delay.spawn_dinos(params[:dino], @batch_id)
-    puts job.id
-    puts params[:dino]
-    flash[:notice] = "Spawning dinosaurs..."
-
+    Dinosaur.delay.spawn_dinos(params[:dino], @batch_id)
   end
-
-  # GET /spawning_done
-  def spawning_done
-    # puts @dino_info
-  end
-
 
 end

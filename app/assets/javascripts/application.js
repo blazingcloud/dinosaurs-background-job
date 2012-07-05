@@ -7,9 +7,11 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+var BatchHelper = {};
 $(function () {
     if ($('#spawn').length > 0) {
         check_job();
+        BatchHelper.start_time = Date.now();
     }
 });
 
@@ -20,7 +22,8 @@ function check_job() {
 
 function callback(response) {
     var status = response.status;
-    $('#spawn').append('<div>Job status: ' + status + '</div>');
+    var elapsed = (Date.now() - BatchHelper.start_time) / 1000;
+    $('#spawn').text('Job status: ' + status + '. Elapsed time: ' + elapsed + ' seconds.');
     switch(status) {
         case 'processing':
             setTimeout(check_job, 5000);
@@ -35,6 +38,5 @@ function callback(response) {
 
 function show_batch() {
     var batch_id = $('#spawn').attr('data-id');
-    $('#spawn').append('<div>hey i am done</div>');
     $.getScript('batches/' + batch_id + '.js');
 }
