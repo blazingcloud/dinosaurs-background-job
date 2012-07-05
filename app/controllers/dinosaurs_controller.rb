@@ -90,7 +90,9 @@ class DinosaursController < ApplicationController
   def spawning_results
     batch = Batch.create!(:status => "processing")
     @batch_id = batch.id
+
     Dinosaur.delay.spawn_dinos(params[:dino], @batch_id)
+
   end
 
 end

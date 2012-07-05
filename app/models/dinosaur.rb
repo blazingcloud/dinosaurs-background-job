@@ -3,6 +3,7 @@ class Dinosaur < ActiveRecord::Base
   belongs_to :batch
 
   def self.spawn_dinos(dino_params, batch_id)
+
     sleep 10 # pretend that this method takes a long time
     dino_params.each do |dino|
       dino["batch_id"] = batch_id

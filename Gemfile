@@ -7,6 +7,7 @@ gem 'rails', '3.1.0'
 
 group :development, :test do
   gem 'sqlite3'
+  gem 'rspec-rails'
 end
 group :production do
   gem 'pg'
@@ -37,4 +38,5 @@ gem 'jquery-rails'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'shoulda-matchers'
 end
